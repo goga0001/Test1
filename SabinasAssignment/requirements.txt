@@ -1,0 +1,4 @@
+express
+axios
+sqlite3
+npm
