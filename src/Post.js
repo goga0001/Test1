@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
-import form from 'react-bootstrap/form'
+import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 
 export default function Post() {
@@ -19,7 +19,7 @@ export default function Post() {
     }
 
 
-    const formBody = JSON.stringify(details)
+    const FormBody = JSON.stringify(details)
     console.log(details)
    
 
@@ -40,48 +40,48 @@ export default function Post() {
   }
 
   return (
-    <div className="search-form">
-      <form onSubmit={submitdescription}>
+    <div className="search-Form">
+      <Form onSubmit={submitdescription}>
         {/* Cityname input */}
-        <form.Group className="mb-3" controlId="CitynameInput">
-          <form.Label>City</form.Label>
-          <form.Control
+        <Form.Group className="mb-3" controlId="CitynameInput">
+          <Form.Label>City</Form.Label>
+          <Form.Control
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             placeholder="Enter your City"
             required
           />
-        </form.Group>
+        </Form.Group>
 
         {/* Temperature input  */}
-        <form.Group className="mb-3" controlId="temperatureDropdown">
-          <form.Label>temperature</form.Label>
-          <form.Control
+        <Form.Group className="mb-3" controlId="temperatureDropdown">
+          <Form.Label>temperature</Form.Label>
+          <Form.Control
             type="number"
             value={temperature}
             onChange={(e) => setTemperature(e.target.value)}
             placeholder="Enter Temperature"
             required
           />
-        </form.Group>
+        </Form.Group>
 
         {/* Input description */}
-        <form.Group className="mb-3" controlId="descriptionInput">
-          <form.Label>description</form.Label>
-          <form.Control
+        <Form.Group className="mb-3" controlId="descriptionInput">
+          <Form.Label>description</Form.Label>
+          <Form.Control
             as="textarea"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter your description for the selected temperature"
             required
           />
-        </form.Group>
+        </Form.Group>
 
         <Button variant="primary" type="submit">
           Submit
         </Button>
-      </form>
+      </Form>
     </div>
   )
 }
